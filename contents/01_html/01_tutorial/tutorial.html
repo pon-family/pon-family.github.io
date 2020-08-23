@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" prefix="og: http://ogp.me/ns#">
+  <head>
+    <link rel="stylesheet" href="../../../common/css/style.css">
+    <meta charset="utf-8">
+    <title>10分で学ぶHTML ゼロからスタート</title>
+    <meta property="og:title" content="10分で学ぶHTML ゼロからスタート。HTMLのタグやCSS(Style Sheets)の使い方を学びます。">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://pon-family.github.io/contents/01_html/90_picture/lesson01.jpg">
+    <meta property="og:url" content="https://pon-family.github.io/contents/01_html/01_tutorial/tutorial.html">
+    <meta property="og:description" content="HTMLについてゼロから学びます。まずは文章を書いてみるところから始めて、タグやCSSの使い方を学びます。">
+    <meta property="og:site_name" content="ぽんさん家の学び舎">
+    <script type="text/javascript" src="../../../common/js/common.js"></script>
+    <script type="text/javascript" src="./js/font_size.js"></script>
+    <style>
+      h3 {
+        background-color:moccasin; 
+      }
+      h4 {
+        background-color: seagreen;
+        color: snow;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="ID_TITLE">10分で学ぶHTML ゼロからスタート</h1>
+    </div>
+    <div>
+      <p>HTMLをはじめて学ぶ人向けにHTMLの使い方を10分で紹介します。「はじめの3分」、「途中の3分」、「コーヒーブレイク1分」、「仕上げの3分」の4部構成です。</p>
+      <div style="text-align: center;">
+        <img class="w300" src="../90_picture/lesson01.jpg" alt="パソコン教室">
+      </div>
+      <!--はじめの3分-->
+      <h2>はじめの3分</h2>
+      <h3>進め方の確認</h3>
+      <p>今回はまずStep1としてはじめの3分でHTMLのお作法に従った文章の書き方について紹介します。
+        次にStep2として見出しレベルを設定し、文字に色を付け、画像を入れ込む方法について説明します。
+        そして最後にStep3としてStyleシートを使ってタイトルを装飾方法について解説します。</p>
+      <div style="text-align: center;">
+        <img style="width: 400px" src="./picture/sample_images.gif" alt="今回の流れ">
+      </div>
+      <h2 id="ID_CONTENTS">目次</h2>
+      <div id="ID_CONTENTS_LIST"></div>
+  
+      <h3>STEP1-1 HTMLをコピペで書いてみる</h3>
+      <p>まずはこちらをコピー&amp;ペーストしてHTMLファイルを用意してください。
+        テキストファイルに張り付けた後、ファイル拡張子を<b>html</b>に変換して、
+        「<b>sample.html</b>」のようなファイル名で、デスクトップなどに保存してください。</p>
+      <p>最低限の記述で最初のページを書いてみます。</p>
+      <p class="caption">sample.html</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja" dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;10分で学ぶHTML ゼロからスタート&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  
+      <h3>STEP1-2 HTMLファイルを開いてみる</h3>
+      <p>STEP1-1のファイルの内容を確認してみましょう。Internet ExplolerやChrome、Edgeなどの<b>ウェブブラウザ</b>で確認できます。
+        保存したファイルをダブルクリックで開いて頂ければ自動的にウェブブラウザが起動されるはずです。</p>
+      <p>結果はこのように表示されるはずです。</p>
+      <br><p class="caption">表示結果</p>
+      <hr>
+      <div style="text-align: center;"><img style="width: 400px" src="./picture/step1-1.PNG" alt="結果"></div>
+      <hr><br>
+      <p>Step1では味気ない表示になっていると思いますが、徐々に華やかな表現ができるようにります。頑張ってください。</p>
+  
+      <h3>STEP1-3 最低限のHTMLのタグルールを確認</h3>
+      <p>では、HTMLを記述する際の最低限のルールを確認しましょう。
+        特に今回は不要という方はスキップして<a href="#ID_STEP2">STEP2</a>まで進んでください。</p>
+      <ol>
+        <li>タグを使う</li>
+        <li>headとbodyを書く</li>
+        <li>その他</li>
+      </ol>
+  
+      <h4>ルール1 タグを使って文章を書く</h4>
+      <p>まずはシンプルに考えるために赤字部分だけを確認します。</p>
+      <p class="caption">タグルールの確認</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="ja" dir="ltr"&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      <span style="color: red;">&lt;p&gt;<b>10分で学ぶHTML ゼロからスタート</b>&lt;/p&gt;</span>
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      <p>この部分だけ見てみると、<span style="color: red;"><b>&lt;p&gt;</b></span>と<span style="color: red;"><b>&lt;/p&gt;</b></span>
+        の間に<b>"10分で学ぶHTML ゼロからスタート"</b>というコメントの記載があります。
+        この<span style="color: red;"><b>"&lt;"</b></span>と<span style="color: red;"><b>"&gt;"</b></span>で囲まれた部分が<b>タグ</b>です。
+        このサンプルの場合、
+        &lt;p&gt;のほかに&lt;title&gt;、&lt;head&gt;、&lt;body&gt;などもタグです。
+        HTMLにはこの<b>タグ</b>を使って文章を書くというルールがあります。</p>
+        <p>なお、今回ピックアップした<span style="color: red;"><b>&lt;p&gt;</b></span>はparagraph(段落、節)のpです。文章を書くときに使うタグです。</p>
+        <p class="caption">paragraphタグの使用例</p>
+      <pre class="code"><code>
+  　<span style="color: red;">&lt;p&gt;</span>10分で学ぶHTML ゼロからスタート<span style="color: red;">&lt;/p&gt;</span></code>
+      </pre>
+      <p>タグは<b>開始タグ</b>と<b>終了タグ</b>の2種類あります。
+        paragraphタグの場合、開始タグが&lt;p&gt;で、
+        終了タグがバックスラッシュ<b>" / "</b>が付いた&lt;/p&gt;というルールがあります。
+        文章はこの開始タグ&lt;p&gt;と終了タグ&lt;/p&gt;の間に書く必要があります。
+      </p>
+      <p>他のタグも同様に、例えば、ウェブページタイトルはtitleの開始タグ&lt;title&gt;と終了タグ&lt;/title&gt;の間に、
+        HTMLヘッダと呼ばれているものはheadの開始タグ&lt;head&gt;と終了タグ&lt;/head&gt;の間に書くといった
+        <b>開始タグと終了タグの間に記述する</b>というルールがあります。覚えておいてください。</p>
+  
+      <h4>ルール2 headとbodyを使ってHTMLを構成する</h4>
+      <p>HTMLではheadタグで囲まれたヘッダとbodyタグで囲まれたボディをHTMLファイル内に用意する必要があります。
+        
+      </p><p>まずはhead(ヘッダ)を確認してみます。</p>
+      <p class="caption">HEADの確認</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="ja" dir="ltr"&gt;
+    <b><span style="color: red;">&lt;head&gt;</span>
+      <span style="color: red;">&lt;meta charset="utf-8"&gt;</span>
+      <span style="color: red;">&lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;</span>
+  <span style="color: red;">&lt;/head&gt;</span></b>
+    &lt;body&gt;
+      &lt;p&gt;10分で学ぶHTML ゼロからスタート&lt;/p&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      <p>headにはウェブページの情報を記述します。
+        開始タグは&lt;head&gt;、終了タグは&lt;/head&gt;です。
+        その間に&lt;meta charset="utf-8"&gt;や&lt;title&gt;xxx&lt;/title&gt;がありますが、
+        これがheadに記載されたウェブページの情報となります。</p>
+      <p>&lt;meta charset="utf-8"&gt;は文字形式(キャラクターセット)を示す情報ですが、まずはこのまま記載しておいてください。
+      プログラミングに親しい人ならよくご存じだと思いますし、そうでない人は深入りする必要はありません。</p>
+      <p>&lt;title&gt;xxx&lt;/title&gt;はその名の通りタイトルです。ウェブページのタイトルを記載しておきます。
+        ただしここの情報はディスプレイには表示されません。Googleなどで検索したときに検索ブラウザ上で表示されるタイトルになります。
+        (ウェブブラウザのタブには表示されているかもしれません。)</p>
+      <p>つぎにbody(ボディ)を確認してみます。</p>
+      <p class="caption">BODYの確認</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="ja" dir="ltr"&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+    &lt;/head&gt;
+    <b><span style="color: red;">&lt;body&gt;</span>
+      <span style="color: red;">&lt;p&gt;10分で学ぶHTML ゼロからスタート&lt;/p&gt;</span>
+  <span style="color: red;">&lt;/body&gt;</span></b>
+  &lt;/html&gt;</code></pre>
+      <p>bodyにはウェブページ本文を記述します。
+      開始タグは&lt;body&gt;、終了タグは&lt;/body&gt;です。
+      その間に&lt;p&gt;<b>10分で学ぶHTML ゼロからスタート</b>&lt;/p&gt;がありますが、
+      これがbodyに記載されたウェブページ本文の情報となります。</p>
+      <p>今回は&lt;p&gt;タグがひとつですが、必要に応じて複数記載することができます。
+        タイトルタグと異なり、これはウェブページ上に記載される情報となります。</p>
+  
+      <h4>その他のルール</h4>
+      <p>HTMLを書くときのお作法が他にもありますが、読み飛ばして頂いて構いません。興味のある方のみご一読ください。</p>
+      <p>1つ目は<b>Document Type(ドキュメントタイプ)</b>です。</p>
+      <p class="caption">ドキュメントタイプの確認</p>
+      <pre class="code"><code><b><span style="color: red;">&lt;!DOCTYPE html&gt;</span></b>
+  &lt;html lang="ja" dir="ltr"&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;p&gt;10分で学ぶHTML ゼロからスタート&lt;/p&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      <p>これはドキュメントタイプを宣言するタグです。これにより<b>HTMLドキュメント</b>であることを明示しています。これはルールに従って書いておきましょう。</p>
+      <p class="caption">DOCTYPEの記載方法</p>
+      <pre class="code"><code>
+　<span style="color: red;">&lt;!DOCTYPE html&gt;</span></code>
+      </pre>
+  
+      <p>2つ目は<b>html</b>タグです。DOCTYPE以外の全てのタグを囲むことになります。こちらも必ず書く必要があります。</p>
+      <p class="caption">HTMLタグの確認</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+  <b><span style="color: red;">&lt;html lang="ja" dir="ltr"&gt;</span></b>
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;p&gt;10分で学ぶHTML ゼロからスタート&lt;/p&gt;
+    &lt;/body&gt;
+  <b><span style="color: red;">&lt;/html&gt;</span></b></code></pre>
+  
+      <p class="caption">HTMLタグの使用例</p>
+      <pre class="code"><code>
+  <span style="color: red;">&lt;html&gt;</span>
+    ・・・headやbody・・・
+  <span style="color: red;">&lt;/html&gt;</span></code>
+      </pre>
+
+      <!--途中の3分-->
+      <h2 id="ID_STEP2">途中の3分</h2>
+      <p>見出しレベルの設定方法、文字の色付け方法、画像の挿入方法を見ていきます。</p>
+
+      <h3>STEP2-1 見出しレベルの設定</h3>
+      <p>文章にメリハリを付けたいとき、見出しレベルの設定が効果的です。
+        Ｈeadlineタグと呼ばれている&lt;h1&gt;タグや&lt;h2&gt;タグ、&lt;h3&gt;タグ、&lt;h4&gt;タグ
+        を使って見出しレベルを設定することができます。hの後の数値がレベルを表現しています。</p>
+      <p class="caption">見出しレベルのサンプル</p>
+      <img src="./picture/キャプチャ02.PNG" alt="見出し">
+      <p>今回は<b>10分で学ぶHTML</b>を<b>&lt;h1&gt;タグ</b>で囲い、それ以外は&lt;p&gt;タグで囲います。</p>
+      <p class="caption">sample.html</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja" dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <b><span style="color: red;">&lt;h1&gt;10分で学ぶHTML&lt;/h1&gt;</span></b>
+    &lt;p&gt;みんなでゼロから学びましょう&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <p class="caption">見出しの設定</p>
+      <img src="./picture/キャプチャ03.PNG" alt="見出し設定"> 
+
+      <h3>STEP2-2 文字の色付け</h3>
+      <p>ウェブページの装飾の第一歩は文字に色を付けるところから始まります。</p>
+      <p>従来はfontというタグで文字色の設定ができるようです。が、</p>
+      <p style="color: red; font-size: 40px;">Not Supported in HTML5.</p>
+      <p>HTML5というバージョンではサポートされていないようです。</p>
+      <p>なので今回は現在推奨されている<b>Styleタグ</b>を使って色付けをしていきます。
+        特に今回は不要という方はスキップして<a href="#ID_STEP2_3">STEP2-3</a>まで進んでください。</p>
+
+      <p class="caption">sample.html</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja" dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;10分で学ぶHTML&lt;/h1&gt;
+    &lt;p&gt;みんなで<b><span style="color: red;">&lt;span style="color: red;"&gt;ゼロ&lt;/span&gt;</span></b>から学びましょう&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <p class="caption">文字の色付け</p>
+      <img src="./picture/キャプチャ04.PNG" alt="見出し設定"> 
+      <p>Styleの説明については、以下をご確認ください。</p>
+
+      <h4>HTML Style属性とは</h4>
+      <p>HTML StyleはHTML要素の色やフォント、サイズなどを変更するときに使用できる設定項目(属性)です。</p>
+      <p class="caption">Style属性の使用例</p>
+      <p style="color:red; padding: 0px; margin: 0px;">赤色の文字</p>
+      <p style="color:blue; padding: 0px; margin: 0px;">青色の文字</p>
+      <p style="color:green; padding: 0px; margin: 0px;">青色の文字</p>
+  
+      <h4>HTML Styleの3つの設定方法</h4>
+      <p>設定方法は3種類あります。タグに直接記載する<b>インライン設定</b>、ヘッダ内に記載する<b>インターナル設定</b>、そして外部ファイルを参照する<b>外部設定</b>。
+      以下にてそれぞれ紹介します。</p>
+  
+      <h4>[a]インライン設定</h4>
+      <p>インライン設定はタグの中に直接Style情報を記載します。本文中の特定箇所だけ個別に設定できるので便利です。
+        ただ、使いすぎると保守性が低下するので、インターナル設定や外部設定と併用することをお勧めします。</p>
+      <p class="caption">インライン設定の例</p>
+      <pre class="code"><code>&lt;p <span style="color:red;">style="color: red;"</span>&gt;インライン設定の例&lt;/p&gt;</code></pre>
+  
+      <h4>[b]インターナル設定</h4>
+      <p>インターナル設定はヘッダの中にStyle情報を記載します。タグごとや、特定のID、Classと呼ばれる単位に対して
+        まとめて設定することができます。
+        以下の例では全ての&lt;p&gt;要素に対して文字が赤くなるような設定をしています。
+        ウェブページごとにまとめて設定したい場合に使用してみてください。</p>
+      <p class="caption">インターナル設定の例</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="ja" dir="ltr"&gt;
+    &lt;head&gt;
+      <b><span style="color:red;">&lt;style&gt;
+        p {color: red;}
+    &lt;/style&gt;</span></b>
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;p&gt;インターナル設定の例&lt;/p&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+  
+      <h4>[c]外部設定</h4>
+      <p>外部設定は外部のCascading Style Sheets(CSS)と呼ばれるファイルにStyle情報を記載します。
+        Style情報をウェブページに対してまとめて設定するときに便利です。
+        ただし、Style情報の変更が参照している全てのファイルに影響ができることに注意が必要です。</p>
+      <p class="caption">外部設定の例(HTMLファイル)</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="ja" dir="ltr"&gt;
+    &lt;head&gt;
+      <b><span style="color:red;">&lt;link rel="stylesheet" href="./style.css"&gt;</span></b>
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;p&gt;外部設定の例&lt;/p&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      <p>外部ファイルを参照するときは、下記のようにCSSファイルを引き当てる必要があります。</p>
+      <p class="caption">外部ファイルの参照方法</p>
+      <pre class="code"><code><span style="color:red;">&lt;link rel="stylesheet" href="./style.css"&gt;</span></code></pre>
+      <p>外部ファイルの記載方法はインターナル設定の記述と同じです。ファイルの拡張子は".css"とする必要があります。</p>
+      <p class="caption">外部設定の例(外部ファイル/style.css)</p>
+      <pre class="code"><code><span style="color:red;">p {color: red;}</span></code></pre>
+
+      <h3 id="ID_STEP2_3">STEP2-3 画像の挿入</h3>
+      <p>画像の挿入は&lt;img&gt;タグを使います。srcに画像ファイルを指定し、
+        altに画像が表示されるまでの代替テキストを指定してください。
+        今回はhtmlファイルと同一フォルダにあるsample.jpgというファイルを挿入しています。
+      </p>
+      <p class="caption">sample.html</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja" dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;10分で学ぶHTML&lt;/h1&gt;
+    &lt;p&gt;みんなで&lt;span style="color: red;"&gt;ゼロ&lt;/span&gt;から学びましょう&lt;/p&gt;
+    <b><span style="color: red;">&lt;img src="./sample.jpg" alt="サンプル画像"&gt;</span></b>
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <p class="caption">画像の挿入</p>
+      <img src="./picture/step2-1.PNG" alt="画像の挿入"> 
+
+      <h2>コーヒーブレークの1分</h2>
+      <div id="ID_OBJECT" style="position:relative; width:100%">
+        <img class="circle" style="width: 200px;" src="../90_picture/先生01.jpg" alt="アニメーション">
+      </div>
+      <script type="text/javascript">
+        window.onload = function() {
+          //var area_width = window.innerWidth;
+          var area_width = 400;
+          var period = parseInt(1000/20);
+          var step = parseInt(area_width/period/4);
+          var flag = true;
+          var position = 0;
+          setInterval(function() {
+            //area_width = window.innerWidth;
+            area_width = 400
+            if (flag == true){
+               position = position + step;
+            }else if (flag == false){
+              position = position - step;
+            }
+            ID_OBJECT.style.left = position + 'px';
+            if (position > area_width - 200) flag = false;
+            if (position < 0) flag =true;
+          }, period);
+        };
+      </script>
+
+      <h3>フォントサイズを変更する</h3>
+      <p>フォントサイズはStyleのfont-sizeで変更することができます。試してみてください。</p>
+      <p class="caption">フォントサイズの変更</p>
+      <pre class="code"><code>&lt;p <span style="color: red;">style="font-size: 10px;"</span>&gt;文字サイズの変更&lt;/p&gt;</code></pre>
+
+      <p class="caption">フォントサイズ例</p>
+      <div id="ID_SIZE1120">
+        <script>
+          font_size("ID_SIZE1120",8,30);
+        </script>
+      </div>
+  
+      <h2 id="ID_STEP3">仕上げの3分</h2>
+      <p>仕上げに見出しの装飾と画像の中央寄せを行います。</p>
+      <h3>STEP3-1   外部ファイルを使ったStyleの変更</h3>
+      <p>見出しを装飾を加えます。まずstyle.cssという名称で下記のファイルを用意してください。</p>
+      <p class="caption">style.css</p>
+      <pre class="code"><code>h1 {
+    background: #FFFFEE;
+    border-left: solid 15px #FF9900;
+    border-right: solid 15px #FF9900;
+    border-bottom: solid 3px #CCCCCC;
+    padding-left: 10px;
+    text-align: center;
+}</code></pre>
+      <p>次に、htmlファイルに下記の1行を追加してください。</p>
+      <p class="caption">sample.html</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja" dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+    <b><span style="color:red;">&lt;link rel="stylesheet" href="./style.css"&gt;</span></b>
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;10分で学ぶHTML&lt;/h1&gt;
+    &lt;p&gt;みんなで&lt;span style="color: red;"&gt;ゼロ&lt;/span&gt;から学びましょう&lt;/p&gt;
+    &lt;img src="./sample.jpg" alt="サンプル画像"&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <p>下記のように装飾されていると思います。</p>
+      <p class="caption">見出しの装飾</p>
+      <img src="./picture/キャプチャ05.PNG" alt="見出しの装飾">
+
+      <h3>STEP3-2 画像の中央寄せ</h3>
+      <p>画像をスクリーン中央に寄せます。htmlファイルを下記のように修正してください。</p>
+      <p class="caption">sample.html</p>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang="ja" dir="ltr"&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;10分で学ぶHTML ゼロからスタート&lt;/title&gt;
+      &lt;link rel="stylesheet" href="./style.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;10分で学ぶHTML&lt;/h1&gt;
+      &lt;p&gt;みんなで&lt;span style="color: red;"&gt;ゼロ&lt;/span&gt;から学びましょう&lt;/p&gt;
+      <b><span style="color:red;">&lt;div style="text-align: center;"&gt;</span></b>
+        &lt;img src="./sample.jpg" alt="サンプル画像"&gt;
+      <b><span style="color:red;">&lt;/div&gt;</span></b>
+    &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+      <p class="caption">完成イメージ</p>
+      <img src="./picture/step3-1.PNG" alt="完成">
+
+      <h3>STEP3-3 完成</h3>
+      <p>今回はまずStep1としてHTMLのお作法に触れ、
+        次にStep2として見出しレベルを設定し、文字に色を付け、画像を挿入しました。
+        そして最後にStep3としてStyleシートを使って見出しの装飾と画像の中央寄せを行いました。
+        いかがだったでしょか？細かいところをみると10分でやりきれないかもしれませんが、流れだけを見る分には10分で確認できたかと思います。
+      </p>
+      <img src="./picture/sample_images.gif" alt="完成">
+      <h2 id="ID_COMMENT">感想</h2>
+      <p>ちょっと難しいところは<b>おまじない</b>だと思って深入りしないことをお勧めします。
+        必要なときに、そのときに身についている知識をもって再度調べてみてください。
+        いまはとにかく前に進むことが大切です。</p>
+      <img class="circle" style="width:300px;" src="../90_picture/先生02.jpg" alt="さようなら">
+    </div>
+
+    <div style="width: 100%;" id="ID_FOOTER"></div>
+
+    <script>
+      create_contents_list("ID_CONTENTS_LIST");
+      create_footer("ID_FOOTER",3);
+    </script>
+
+  </body>
+</html>

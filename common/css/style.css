@@ -1,0 +1,59 @@
+div {
+  width: 900px;
+  margin: 0px auto;
+  background-color: white;
+}
+
+h1 {
+  background: #FFFFEE;
+  border-left: solid 15px #FF9900;
+  border-right: solid 15px #FF9900;
+  border-bottom: solid 3px #CCCCCC;
+  padding-left: 10px;
+  text-align: center;
+}
+
+h2 {
+  border-left: solid 20px #FF9900;
+  padding-left: 5px;
+  margin-top: 50px;
+}
+
+h3 {
+  text-decoration: underline;  
+}
+
+b {
+  font-size: 1.1rem;
+}
+
+table, td, th{
+  border: solid 1px black;
+}
+
+.caption {
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.code {
+  background: #EEEEEE;
+  border-left: solid 10px #999999;
+  border-bottom: solid 3px #CCCCCC;
+  padding: 10px;
+  margin: 0px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+.guide_area_bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  margin: 0px 0px 0px 0px;
+  padding: 5px;
+  text-align: center;
+}
